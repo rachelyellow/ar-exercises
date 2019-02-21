@@ -10,3 +10,13 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+store_name = gets.chomp
+
+new_store = Store.create(
+  name: store_name,
+  annual_revenue: -1
+)
+
+new_store.errors.messages.each do |field, messages|
+  puts "#{field} #{messages.first}"
+end
